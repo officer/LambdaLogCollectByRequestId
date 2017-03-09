@@ -24,4 +24,11 @@ context.done = function () {
     console.log("Lambda Function Complete");
 }
 
-app.handler(event, context);
+app.handler(event, context, function (err, results) {
+    if (err) {
+        console.log(JSON.stringify(err));
+    } else {
+        console.log(JSON.stringify(results));
+    }
+
+});
